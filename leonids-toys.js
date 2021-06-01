@@ -1,6 +1,3 @@
-const figureToFind = 3;
-
-
 const actionfigures = [
 {
     id:1,
@@ -37,19 +34,30 @@ const farquad = {
 actionfigures.push(farquad)
 
 const shrek = {
-    id:5,
+    //id:5,
     name:"Shrek",
     maker:"Dreamworks",
     price:69,
     weight:30
 }
-actionfigures.push(shrek)
+
+const addFigureToInventory = (figureObject) => {
+    const lastIndex = actionfigures.length - 1
+    const currentLastFigure = actionfigures[lastIndex]
+    const maxId = currentLastFigure.id 
+    const idForNewFigure = maxId + 1
+
+    figureObject.id = idForNewFigure
+    actionfigures.push(figureObject)
+}
+
+addFigureToInventory(shrek)
 
 for (const actionfigure of actionfigures) {
     // Only one figure will cause the condition below to evaluate to true
-    if (actionfigure.id === figureToFind) {
+    //if (actionfigure.id === figureToFind) {
         actionfigure.weight = actionfigure.weight + 0.4
         actionfigure.price = actionfigure.price * .05 + actionfigure.price
         console.log(`The ${actionfigure.maker} ${actionfigure.name} costs ${actionfigure.price} dollars. It weighs ${actionfigure.weight} grams.`)
     }
-}
+
