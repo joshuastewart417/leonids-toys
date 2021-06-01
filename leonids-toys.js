@@ -33,10 +33,18 @@ const farquad = {
 }
 actionfigures.push(farquad)
 
+const shrek = {
+    id:5,
+    name:"Shrek",
+    maker:"Dreamworks",
+    price:69,
+    weight:30
+}
+actionfigures.push(shrek)
+
+
 for (const actionfigure of actionfigures) {
-    console.log(actionfigure.price)
-    console.log(actionfigure.maker)
-    console.log(actionfigure.name)
+    console.log(`The ${actionfigure.name} action figure by maker ${actionfigure.maker} costs ${actionfigure.price} dollars and weighs ${actionfigure.weight} ounces`)
 }
 
 
