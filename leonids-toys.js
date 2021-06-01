@@ -1,3 +1,6 @@
+const figureToFind = 3;
+
+
 const actionfigures = [
 {
     id:1,
@@ -42,11 +45,11 @@ const shrek = {
 }
 actionfigures.push(shrek)
 
-
 for (const actionfigure of actionfigures) {
-    console.log(`The ${actionfigure.name} action figure by maker ${actionfigure.maker} costs ${actionfigure.price} dollars and weighs ${actionfigure.weight} ounces`)
+    // Only one figure will cause the condition below to evaluate to true
+    if (actionfigure.id === figureToFind) {
+        actionfigure.weight = actionfigure.weight + 0.4
+        actionfigure.price = actionfigure.price * .05 + actionfigure.price
+        console.log(`The ${actionfigure.maker} ${actionfigure.name} costs ${actionfigure.price} dollars. It weighs ${actionfigure.weight} grams.`)
+    }
 }
-
-
-
-
